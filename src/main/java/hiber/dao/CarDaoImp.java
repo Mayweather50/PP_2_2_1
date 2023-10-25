@@ -17,14 +17,12 @@ public class CarDaoImp implements CarDao {
 
     @Override
     public void addCar(Car car) {
-
         sessionFactory.getCurrentSession().save(car);
 
     }
 
     @Override
     public List<Car> getCars() {
-
         TypedQuery<Car> typedQuery = sessionFactory.getCurrentSession().createQuery("from Car");
         return typedQuery.getResultList();
     }
